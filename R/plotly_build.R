@@ -945,7 +945,7 @@ map_linetype <- function(traces) {
   pal <- supplyUserPalette(pal, traces[[1]][["linetypes"]])
   
   validLinetypes <- as.character(Schema$traces$scatter$attributes$line$dash$values)
-  if (length(pal) > length(validLinetypes)) {
+  if (length(unique(pal)) > length(validLinetypes)) {
     warning("plotly.js only supports 6 different linetypes", call. = FALSE)
   }
   
